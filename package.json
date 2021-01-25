@@ -4,7 +4,7 @@
   "description": "",
   "main": "index.js",
   "scripts": {
-    "new": "npm new:article",
+    "new": "zenn new:article",
     "new:article": "zenn new:article",
     "new:book": "zenn new:book",
     "start": "zenn preview"
