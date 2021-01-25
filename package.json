@@ -1,0 +1,18 @@
+{
+  "name": "zenn-zenn",
+  "version": "0.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "new": "npm new:article",
+    "new:article": "zenn new:article",
+    "new:book": "zenn new:book",
+    "start": "zenn preview"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "MIT",
+  "devDependencies": {
+    "zenn-cli": "^0.1.72"
+  }
+}
