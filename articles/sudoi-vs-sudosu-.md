@@ -139,10 +139,6 @@ $ LANG=C sudo su - -c date
 2021年  1月 25日 月曜日 20:35:44 JST
 ```
 
-sudoers の env\_\* によって設定変更可能
-
-https://qiita.com/chroju/items/375582799acd3c5137c7
-
 これは一長一短だと思う。個人的には引き継ない`sudo su -`の動作が好き。
 
 # まとめ
