@@ -15,7 +15,7 @@ published: true
 
 `sudo` `-i`オプションの意味は simulate initial login であるようだ。
 
-## 違い 1: 実行されるプロセス数が違う
+# 違い 1: 実行されるプロセス数が違う
 
 当然だが、`sudo su -` は`sudo`と`su`コマンドを実行する。root に昇格している間はこれらのプロセスが立ち上がったままとなる。
 対して`sudo -i`コマンドは`sudo`コマンドのみを実行する。root に昇格している間は`sudo`プロセスのみとなる。
@@ -63,16 +63,16 @@ sys     0m0.003s
 
 リソース面だけでみれば、`sudo`コマンドの結果はほぼ変わらず、`su`コマンドが加わった分、`sudo -i`ほうが有利なようだ。
 
-## 違い 2: 環境変数
+# 違い 2: 環境変数
 
-### `sudo -i`の場合以下の環境変数がセットされている。
+## `sudo -i`の場合以下の環境変数がセットされている。
 
 - SUDO_COMMAND: 実行コマンド
 - SUDO_UID: 昇格前の UID
 - SUDO_GID: 昇格前の GID
 - SUDO_USER: 昇格前の USER
 
-### CentOS の `sudo -i`だと/usr/local/bin が PATH 環境変数がセットされていない。
+## CentOS の `sudo -i`だと/usr/local/bin が PATH 環境変数がセットされていない。
 
 CentOS8 の動作(CentOS7 でも同様)
 
@@ -117,7 +117,7 @@ Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
            Defines the PATH environment variable for root.  The default value is /usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin.
 ```
 
-### 環境変数の引継ぎ
+## 環境変数の引継ぎ
 
 `sudo -i`では環境変数が引き継がれる。
 
@@ -145,7 +145,7 @@ https://qiita.com/chroju/items/375582799acd3c5137c7
 
 これは一長一短だと思う。個人的には引き継ない`sudo su -`の動作が好き。
 
-## まとめ
+# まとめ
 
 | 違い               |                                        sudo -i                                        | sudo su -                                                    |
 | :----------------- | :-----------------------------------------------------------------------------------: | ------------------------------------------------------------ |
@@ -157,7 +157,7 @@ https://qiita.com/chroju/items/375582799acd3c5137c7
 
 用途によって使い分けるとよさそう。
 
-## 参考情報
+# 参考情報
 
 https://www.maketecheasier.com/differences-between-su-sudo-su-sudo-s-sudo-i/
 
