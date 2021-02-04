@@ -121,13 +121,16 @@ https://doc.rust-lang.org/std/macro.dbg.html
 # `dbg!`マクロ利用で警告/エラーを表示 - Clippy との連携
 
 `dbg!`マクロは release ビルド時でも出力されます。
-また、バージョン管理システムでの dbg!マクロ利用をエラーにしたい等があります。
+また、バージョン管理システムでの `dbg!`マクロ利用をエラーにしたい等があります。
 
-これらは Rust の lint ツールである Clippy を利用することで対策することができます。
+これらは Rust の lint ツールである Clippy を利用することで対策できます。
 
 https://github.com/rust-lang/rust-clippy
 
-clippy をインストール後、 `cargo check`コマンドのように`cargo clippy`コマンドを利用、`clippy::dbg_macro`のレベルを変更することで警告/エラーを表示することが可能です。
+clippy をインストール後、`cargo check`コマンドのように
+`cargo clippy`コマンドを利用できます。
+`dbg!`マクロで警告/エラーを表示する場合、
+`clippy::dbg_macro`のレベルを変更することで表示できます。
 
 https://rust-lang.github.io/rust-clippy/master/index.html#dbg_macro
 
@@ -166,12 +169,13 @@ https://rust-lang.github.io/rust-clippy/master/index.html#dbg_macro
    [Rust Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=940e7dfd05a9f4d90dacfedc0a882cf7)
 
    :::message
-   こちらは属性を追加するだけで楽ですが、ファイルごとのチェックになるため、全ファイルに付与する必要があり、規模が大きい場合はコマンドラインオプションでの指定のほうが楽です。
+   こちらは属性を追加するだけで楽ですがファイルごとのチェックになるため、
+   全ソースファイルに属性付与する必要があり、規模が大きい場合はコマンドラインオプションでの指定のほうが楽です。
    :::
 
 2. コマンドラインオプションでの指定
 
-   git の pre-commit や CI 等でチェックするならコマンドラインで指定するのが便利です。
+   Git の pre-commit や CI 等を使いチェックをするならコマンドラインで指定するのが便利です。
 
    - 警告表示
 
@@ -186,10 +190,11 @@ https://rust-lang.github.io/rust-clippy/master/index.html#dbg_macro
      ```
 
    :::message
-   注意する点としてローカル等で以前に`cargo clippy`を実行している場合、コマンドラインオプションが反映されないため事前に`cargo clean`を実行する必要があります。
+   注意する点としてローカル等で以前に`cargo clippy`を実行している場合、
+   コマンドラインオプションが反映されないため事前に`cargo clean`を実行する必要があります。
    :::
 
-   git の pre-commit の一例としては以下のような内容になるかと思います。
+   Git の pre-commit の一例としては以下のような内容になります。
 
    ```bash
    #!/bin/bash -eu
@@ -200,12 +205,11 @@ https://rust-lang.github.io/rust-clippy/master/index.html#dbg_macro
 # rust-analyzer との連携
 
 `dbg!`マクロは LSP である rust-analyzer を利用することで便利な機能があります。
-rust-analyzer は様々なエディタで利用することができますが、本記事では VSCode を利用しま
-す。
+rust-analyzer は様々なエディタで利用できますが、本記事では VSCode を利用します。
 
 ## `dbg!` マクロの挿入
 
-Magic Completions と呼ばれる機能を使うことでお手軽に`dbg!`マクロを挿入することができます。
+Magic Completions と呼ばれる機能を使うことでお手軽に`dbg!`マクロを挿入できます。
 https://rust-analyzer.github.io/manual.html#magic-completions
 
 1. expr.dbg
@@ -238,7 +242,8 @@ https://rust-analyzer.github.io/manual.html#magic-completions
 
 ## `dbg!` マクロの削除
 
-`dbg!` マクロにカーソルがある状態で`Ctrl + .`またはエディタの左側に表示される 💡 アイコンをクリックすると`Remove dbg!()`というメニューが表示され、それをクリックすると`dbg!`マクロを削除してくれます。
+`dbg!` マクロにカーソルがある状態で`Ctrl + .`またはエディタの左側に表示される 💡 アイコンをクリックすると、
+`Remove dbg!()`というメニューが表示され、それをクリックすると`dbg!`マクロを削除します。
 
 ```rust
     💡dbg!(1)
@@ -252,15 +257,15 @@ https://rust-analyzer.github.io/manual.html#magic-completions
 
 ## clippy の利用
 
-rust-analyzer はデフォルトでは保存時に`cargo check`を実行をしますが、設定を変更することにより、`cargo clippy`を実行することができます。
+rust-analyzer はデフォルトでは保存時に`cargo check`を実行をしますが、設定を変更することにより、`cargo clippy`を実行できます。
 
-VSCode の settings.json の設定例
+VSCode の settings.json の設定例。
 
 ```json5
 {
-  // 保存時のコマンドをcargo checkから cargo clippyに変更
+  // 保存時のコマンドをcargo checkから cargo clippyに変更します。
   "rust-analyzer.checkOnSave.command": "clippy",
-  // 保存時のコマンドの引数を指定。ここではdbg!マクロ利用時に警告が出るようにしています。
+  // 保存時のコマンドの引数を指定。ここではdbg!マクロ利用時に警告が出るようにします。
   "rust-analyzer.checkOnSave.extraArgs": ["--", "-W", "clippy::dbg-macro"],
 }
 ```
