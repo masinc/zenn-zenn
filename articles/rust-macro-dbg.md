@@ -20,7 +20,15 @@ https://doc.rust-lang.org/std/macro.dbg.html
 
 `dbg!`マクロにて出力する値は`Debug`トレイトを実装している必要があります。
 
-@[gist](https://gist.github.com/rust-play/4aa01bcb1cd8490d6b52d91402a67e64)
+```rust:main.rs
+#[allow(dead_code)]
+struct S(usize);
+
+fn main() {
+    dbg!("rust"); // &strはDebugトレイトを実装している。
+    // dbg!(S(0)); // SはDebugトレイトを実装していないためエラー
+}
+```
 
 ```
 [src/main.rs:5] "rust" = "rust"
@@ -30,7 +38,11 @@ https://doc.rust-lang.org/std/macro.dbg.html
 
 式の結果が`Debug`トレイトを実装していればよく式をそのまま渡すこともできます。
 
-@[gist](https://gist.github.com/rust-play/9f6d3b5f0d93ffa8895a462a5f13ff4b)
+```rust:main.rs
+fn main() {
+    dbg!(1 + 2 + 3 + 4);
+}
+```
 
 ```
 [src/main.rs:2] 1 + 2 + 3 + 4 = 10
@@ -41,7 +53,19 @@ https://doc.rust-lang.org/std/macro.dbg.html
 式の結果が`Copy`トレイトを実装していない場合、値渡しをした場合、元の所有権は失われます。
 `Copy`トレイトを実装してなくても参照渡しをすれば所有権は保持されます。
 
-@[gist](https://gist.github.com/rust-play/7d103eb4ac9123bbb76ee4ffc3a5b63c)
+```rust:main.rs
+#![allow(unused_variables)]
+
+#[derive(Debug)]
+struct S(usize);
+
+fn main() {
+    let a = dbg!(S(1 + 2));
+    let b = dbg!(a.0 + 1);
+    // let c = dbg!(a).0 + 2; // Sはコピートレイトを実装していないためコンパイルエラー
+    let d = dbg!(&a.0 + 1); // 参照渡しはOK
+}
+```
 
 ```
 [src/main.rs:7] S(1 + 2) = S(
@@ -55,7 +79,19 @@ https://doc.rust-lang.org/std/macro.dbg.html
 
 `Copy`トレイトを実装していれば、元の所有権は残ったままとなります。
 
-@[gist](https://gist.github.com/rust-play/5572a97f17d0d4d8bd732e47e316b727)
+```rust:main.rs
+#![allow(unused_variables)]
+
+#[derive(Copy, Clone, Debug)]
+struct S(usize);
+
+fn main() {
+    let a = dbg!(S(1 + 2));
+    let b = dbg!(a.0 + 1);
+    let c = dbg!(a).0 + 2; //SがCopyトレイトを実装しているためOK
+    let d = dbg!(&a.0 + 1); // 参照渡しもOK
+}
+```
 
 ```
 [src/main.rs:7] S(1 + 2) = S(
@@ -72,7 +108,16 @@ https://doc.rust-lang.org/std/macro.dbg.html
 
 実用的な例としては、イテレータの途中経過をデバッグするとき等に利用できます。
 
-@[gist](https://gist.github.com/rust-play/ddfbb447cf37b504f423c69c5dc5884c)
+```rust:main.rs
+#![allow(unused_variables)]
+
+fn main() {
+    let x = (0..5)
+        .map(|x| dbg!(x + 9))
+        .map(|x| dbg!(x * 7))
+        .fold(0, |acc, x| dbg!(acc + x));
+}
+```
 
 ```
 [src/main.rs:5] x + 9 = 9
@@ -96,7 +141,11 @@ https://doc.rust-lang.org/std/macro.dbg.html
 
 引数に何もわたさないと`dbg!`マクロ記述のファイル名と行が出力されます。
 
-@[gist](https://gist.github.com/rust-play/ebf356dddc8763b0eb794146735417aa)
+```rust:main.rs
+fn main() {
+    dbg!()
+}
+```
 
 ```rust
 [src/main.rs:2]
@@ -106,7 +155,13 @@ https://doc.rust-lang.org/std/macro.dbg.html
 
 複数の式を渡すこともできます。戻り値はタプルで帰ってきます。
 
-@[gist](https://gist.github.com/rust-play/f82734a862ef663dd5e64f0166345a95)
+```rust:main.rs
+#![feature(type_name_of_val)]
+fn main() {
+    let a = dbg!(1 + 2, 3 + 4, 5 + 6, 7 + 8);
+    dbg!(std::any::type_name_of_val(&a));
+}
+```
 
 ```rust
 [src/main.rs:3] 1 + 2 = 3
@@ -140,7 +195,13 @@ https://rust-lang.github.io/rust-clippy/master/index.html#dbg_macro
 
    `warn`属性で警告が発生、`deny`属性ではエラーが発生します。
 
-   @[gist](https://gist.github.com/rust-play/940e7dfd05a9f4d90dacfedc0a882cf7)
+   ```rust:main.rs
+   #![warn(clippy::dbg_macro)] // 警告
+   // #![deny(clippy::dbg_macro)] // エラー
+   fn main() {
+     dbg!();
+   }
+   ```
 
    `cargo clippy`の結果(一部抜粋)
 
