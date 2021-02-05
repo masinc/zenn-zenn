@@ -7,12 +7,17 @@
     "new": "zenn new:article",
     "new:article": "zenn new:article",
     "new:book": "zenn new:book",
-    "start": "zenn preview"
+    "start": "zenn preview",
+    "textlint": "textlint"
   },
   "keywords": [],
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "textlint": "^11.8.1",
+    "textlint-rule-preset-ja-technical-writing": "^4.0.1",
+    "textlint-rule-sentence-length": "^2.2.0",
+    "textlint-rule-spellcheck-tech-word": "^5.0.0",
     "zenn-cli": "^0.1.72"
   }
 }
