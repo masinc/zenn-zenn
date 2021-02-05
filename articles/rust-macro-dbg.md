@@ -170,7 +170,8 @@ https://rust-lang.github.io/rust-clippy/master/index.html#dbg_macro
 
    :::message
    こちらは属性を追加するだけで楽ですがファイルごとのチェックになるため、
-   全ソースファイルに属性付与する必要があり、規模が大きい場合はコマンドラインオプションでの指定のほうが楽です。
+   全ソースファイルに属性付与する必要があります。
+   規模が大きい場合はコマンドラインオプション指定が楽です。
    :::
 
 2. コマンドラインオプションでの指定
@@ -190,7 +191,7 @@ https://rust-lang.github.io/rust-clippy/master/index.html#dbg_macro
      ```
 
    :::message
-   注意する点としてローカル等で以前に`cargo clippy`を実行している場合、
+   注意点としてローカル等で以前に`cargo clippy`を実行している場合、
    コマンドラインオプションが反映されないため事前に`cargo clean`を実行する必要があります。
    :::
 
@@ -243,7 +244,7 @@ https://rust-analyzer.github.io/manual.html#magic-completions
 ## `dbg!` マクロの削除
 
 `dbg!` マクロにカーソルがある状態で`Ctrl + .`またはエディタの左側に表示される 💡 アイコンをクリックすると、
-`Remove dbg!()`というメニューが表示され、それをクリックすると`dbg!`マクロを削除します。
+`Remove dbg!()`メニューが表示され、それをクリックすると`dbg!`マクロを削除します。
 
 ```rust
     💡dbg!(1)
