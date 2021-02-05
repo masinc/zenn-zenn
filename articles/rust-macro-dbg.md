@@ -36,7 +36,7 @@ fn main() {
 
 [Rust Playground](https://play.rust-lang.org/?version=stable&mode=debug&edition=2018&gist=4aa01bcb1cd8490d6b52d91402a67e64)
 
-式の結果が`Debug`トレイトを実装していればよく式をそのまま渡すこともできます。
+式の結果が`Debug`トレイトを実装していればよく、式をそのまま渡すこともできます。
 
 ```rust:main.rs
 fn main() {
@@ -182,14 +182,12 @@ fn main() {
 
 https://github.com/rust-lang/rust-clippy
 
-clippy をインストール後、`cargo check`コマンドのように
-`cargo clippy`コマンドを利用できます。
-`dbg!`マクロで警告/エラーを表示する場合、
-`clippy::dbg_macro`のレベルを変更することで表示できます。
+clippy をインストール後、`cargo check` コマンドのように `cargo clippy` コマンドを利用できます。
+`dbg!`マクロで警告/エラーを表示する場合、`clippy::dbg_macro`のレベルを変更することで表示できます。
 
 https://rust-lang.github.io/rust-clippy/master/index.html#dbg_macro
 
-設定方法には大きく分けて 2 通りあり、Rust の属性で設定する方法と、cargo clippy のコマンドラインオプションで指定する方法があります。
+設定方法には大きく分けて 2 通りあり、Rust の属性で設定する方法と、`cargo clippy` のコマンドラインオプションで指定する方法があります。
 
 1. 属性での指定
 
@@ -231,7 +229,7 @@ https://rust-lang.github.io/rust-clippy/master/index.html#dbg_macro
 
    :::message
    こちらは属性を追加するだけで楽ですがファイルごとのチェックになるため、
-   全ソースファイルに属性付与する必要があります。
+   全ソースファイルに属性を付与する必要があります。
    規模が大きい場合はコマンドラインオプション指定が楽です。
    :::
 
