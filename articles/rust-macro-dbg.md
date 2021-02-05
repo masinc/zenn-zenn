@@ -147,7 +147,7 @@ fn main() {
 }
 ```
 
-```rust
+```
 [src/main.rs:2]
 ```
 
@@ -163,7 +163,7 @@ fn main() {
 }
 ```
 
-```rust
+```
 [src/main.rs:3] 1 + 2 = 3
 [src/main.rs:3] 3 + 4 = 7
 [src/main.rs:3] 5 + 6 = 11
