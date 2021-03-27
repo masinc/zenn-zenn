@@ -1,30 +1,30 @@
 ---
-title: "sudo -iと sudo su -の違い"
+title: "sudo -i と sudo su - の違い"
 emoji: "🍣"
 type: "tech" # tech: 技術記事 / idea: アイデア
 topics: ["linux", "sudo", "su"]
 published: true
 ---
 
-どちらも root ユーザーに昇格することができるがこれらの違いが気になったので調査結果をメモ。
+どちらも root ユーザーに昇格できるがこれらの違いが気になったので調査結果をメモ。
 
-まず、これらのコマンドがどういう意味であるかを調べた。
+まず、これらのコマンドがどのような意味であるかを調べました。
 
 - `sudo`: **S**uper **U**ser **DO**
 - `su`: **S**ubstitute **U**ser
 
-`sudo` `-i`オプションの意味は simulate initial login であるようだ。
+`sudo` `-i`オプションの意味は `simulate initial login` であるようだ。
 
 # 違い 1: 実行されるプロセス数が違う
 
-当然だが、`sudo su -` は`sudo`と`su`コマンドを実行する。root に昇格している間はこれらのプロセスが立ち上がったままとなる。
-対して`sudo -i`コマンドは`sudo`コマンドのみを実行する。root に昇格している間は`sudo`プロセスのみとなる。
+当然だが、`sudo su -` は`sudo`と`su`コマンドを実行する。root に昇格している間はこれらのプロセスが立ち上がったままとなります。
+対して`sudo -i`コマンドは`sudo`コマンドのみを実行する。root に昇格している間は`sudo`プロセスのみとなります。
 
-どちらも利用したことがあればわかるが、体感的な速度差はない。
+どちらも利用したことがあればわかるが、体感的な速度差はないです。
 
-リソースは以下のような結果となった。
+リソースは以下のような結果となりました。
 
-`sudo su -`昇格時
+## `sudo su -`昇格時
 
 ```bash
 ~# pidstat -r -C su
@@ -43,7 +43,7 @@ user    0m0.008s
 sys     0m0.003s
 ```
 
-`sudo -i`昇格時
+## `sudo -i`昇格時
 
 ```bash
 ~# pidstat -r -C su
@@ -61,11 +61,11 @@ user    0m0.006s
 sys     0m0.003s
 ```
 
-リソース面だけでみれば、`sudo`コマンドの結果はほぼ変わらず、`su`コマンドが加わった分、`sudo -i`ほうが有利なようだ。
+リソース面だけでみれば、`sudo`コマンドの結果はほぼ変わらず、`su`コマンドが加わった分、`sudo -i`ほうが有利なようです。
 
 # 違い 2: 環境変数
 
-## `sudo -i`の場合以下の環境変数がセットされている。
+## `sudo -i`の場合以下の環境変数がセット
 
 - SUDO_COMMAND: 実行コマンド
 - SUDO_UID: 昇格前の UID
@@ -94,7 +94,7 @@ $ sudo su - -c 'echo $PATH'
 /usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/usr/games:/usr/local/games:/snap/bin:/root/.dotnet/tools
 ```
 
-これは `/etc/sudoers` のディストリビューションごとのデフォルト設定による違いとなる模様。
+これは `/etc/sudoers` のディストリビューションごとのデフォルト設定による違いとなる模様です。
 
 CentOS8
 
@@ -110,7 +110,7 @@ $ sudo grep secure_path /etc/sudoers
 Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/sbin:/bin:/snap/bin"
 ```
 
-`su`コマンドで PATH 環境変数は `su`コマンドがデフォルトでセットしているようだ。
+`su`コマンドで PATH 環境変数は `su`コマンドがデフォルトでセットしているようです。
 
 ```
        ENV_SUPATH (string)
@@ -119,7 +119,7 @@ Defaults        secure_path="/usr/local/sbin:/usr/local/bin:/usr/sbin:/usr/bin:/
 
 ## 環境変数の引継ぎ
 
-`sudo -i`では環境変数が引き継がれる。
+`sudo -i`では環境変数が引き継がれます。
 
 ```bash
 $ sudo -i date
@@ -129,7 +129,7 @@ $ LANG=C sudo -i date
 Mon Jan 25 20:36:25 JST 2021
 ```
 
-`sudo su -`では CentOS8, Ubuntu2004 いずれでもデフォルトでは環境変数が引き継がれない
+`sudo su -`では CentOS8, Ubuntu2004 いずれでもデフォルトでは環境変数が引き継がれませんでした。
 
 ```bash
 $ sudo su - -c date
@@ -139,7 +139,7 @@ $ LANG=C sudo su - -c date
 2021年  1月 25日 月曜日 20:35:44 JST
 ```
 
-これは一長一短だと思う。個人的には引き継ない`sudo su -`の動作が好き。
+これは一長一短であり、個人的には引き継ない`sudo su -`の動作が好きです。
 
 # まとめ
 
@@ -149,7 +149,7 @@ $ LANG=C sudo su - -c date
 | デフォルト環境変数 | /etc/sudoers の secure_path <br> (ディストリビューションによってデフォルト値が異なる) | /usr/local/sbin:/usr/local/bin:/sbin:/bin:/usr/sbin:/usr/bin |
 | 環境変数の引継ぎ   |                                       引き継ぐ                                        | デフォルトでは引き継がない                                   |
 
-各種リソース面では `sudo -i`が有利、環境変数関連は `sudo su -`のほうが好み(ディストリビューションの違いを意識しなくてよい)
+各種リソース面では `sudo -i`が有利、環境変数関連は `sudo su -`のほうが好みでした。(ディストリビューションの違いを意識しなくてよい)
 
 用途によって使い分けるとよさそう。
 
