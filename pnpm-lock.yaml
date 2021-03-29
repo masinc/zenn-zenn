@@ -1,6 +1,6 @@
 devDependencies:
   textlint: 11.9.0
-  textlint-rule-preset-ja-technical-writing: 4.0.1_textlint@11.9.0
+  textlint-rule-preset-smarthr: 1.0.0
   textlint-rule-sentence-length: 2.2.0
   textlint-rule-spellcheck-tech-word: 5.0.0_textlint@11.9.0
   zenn-cli: 0.1.77
@@ -89,13 +89,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-5aPpe5XQPzflQrFwL1/QoeHkP2MsA4JCntcXHRhEsdsfPVkvPi2w7Qix4iV7t5S/oC9OodGrggd8aco1g3SZFg==
-  /@babel/parser/7.13.10:
+  /@babel/parser/7.13.13:
     dev: true
     engines:
       node: '>=6.0.0'
     hasBin: true
     resolution:
-      integrity: sha512-0s7Mlrw9uTWkYua7xWr99Wpk2bnGa0ANleKfksYAES8LpWH4gW1OUr42vqKNf0us5UQNfru2wPqMqRITzq/SIQ==
+      integrity: sha512-OhsyMrqygfk5v8HmWwOzlYjJrtLaFhF34MrfG/Z73DgYCI6ojNUTUp2TYbtnjo8PegeJp12eamsNettCQjKjVw==
   /@babel/runtime/7.12.5:
     dependencies:
       regenerator-runtime: 0.13.7
@@ -204,12 +204,6 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==
-  /@textlint-rule/textlint-rule-no-invalid-control-character/1.2.0:
-    dependencies:
-      execall: 1.0.0
-    dev: true
-    resolution:
-      integrity: sha512-FgkOQr14H8D/LQVAEOR2cGWhzItb9MXCAvaBwKkysIfP9Ngwam+8NRmbphQ/GrAm3PXV63QmK1xwAKM1DntwmQ==
   /@textlint-rule/textlint-rule-no-unmatched-pair/1.0.7:
     dependencies:
       sentence-splitter: 3.2.0
@@ -344,10 +338,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-LLScbDRXov1l4U4OCLJ5clu9eWNonBG+rhuArwYAHpf0hwIoNoETfAQvrNtXZG/NZ96fdWv4PLtaN6dA4ldRdQ==
-  /@textlint/module-interop/1.2.2:
-    dev: true
-    resolution:
-      integrity: sha512-B8HPS129lOqzEpRcafYl/OJ2TDxfBw1jGfEhebzwt3kGoMd5pQVih+hUIOl+SfAmLWqCDEniaKn0gw1s+hjSXA==
   /@textlint/module-interop/1.2.4:
     dev: true
     resolution:
@@ -674,47 +664,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-j3fVLgvTo527anyYyJOGTYJbG+vnnQYvE0m5mmkc1TK+nxAppkCLMIL0aZ4dblVCNoGShhm+kzE4ZUykBoMg4g==
-  /amp-create-callback/1.0.1:
-    dev: true
-    resolution:
-      integrity: sha1-UbtvFJFUXYbpvyNsr/UUu7RXgxA=
-  /amp-each/1.0.1:
-    dependencies:
-      amp-create-callback: 1.0.1
-      amp-keys: 1.0.1
-    dev: true
-    resolution:
-      integrity: sha1-DWyKM79JnIs95iMiRXx4ue2lwA8=
-  /amp-has/1.0.1:
-    dev: true
-    resolution:
-      integrity: sha1-3MWKCQpMb8SUfNtujEEO2f9SAsY=
-  /amp-index-of/1.1.0:
-    dependencies:
-      amp-is-number: 1.0.1
-    dev: true
-    resolution:
-      integrity: sha1-0deY6lfaVSsCE2W4Wx443fmTscE=
-  /amp-is-number/1.0.1:
-    dev: true
-    resolution:
-      integrity: sha1-9DDS5l0bvSzEHb2a+38D0+MooxQ=
-  /amp-is-object/1.0.1:
-    dev: true
-    resolution:
-      integrity: sha1-Coy1lWuREqFqc2d+jLrTe7okdwI=
-  /amp-keys/1.0.1:
-    dependencies:
-      amp-has: 1.0.1
-      amp-index-of: 1.1.0
-      amp-is-object: 1.0.1
-    dev: true
-    resolution:
-      integrity: sha1-tyH7gx2nmIFQT060SjntkwpbsSk=
-  /analyze-desumasu-dearu/2.1.5:
-    dev: true
-    resolution:
-      integrity: sha1-nKoqWgYUbCBnn33J869Sfbb2j0E=
   /analyze-desumasu-dearu/4.0.1:
     dependencies:
       kuromojin: 2.1.1
@@ -1465,10 +1414,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-DQcLTQQ6W+ozovGkDi7bPZpMz3c=
-  /code-point/1.1.0:
-    dev: true
-    resolution:
-      integrity: sha1-mZhB9R9UzK5KDau8hpBjI0YD/s0=
   /collapse-white-space/1.0.6:
     dev: true
     resolution:
@@ -2456,10 +2401,6 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-LoQe6yDuUMDzQAEH8sgmh4Md6oZnc/7PjtwjNFSzveXqSHt6ka9fPBuso7IGf9Rz4uqnSnWiFH2B/zj24a5ReA==
-  /flatmap/0.0.3:
-    dev: true
-    resolution:
-      integrity: sha1-Hxik2TgVLUlZZfnJWNkjqy3WabQ=
   /flatted/2.0.2:
     dev: true
     resolution:
@@ -3340,10 +3281,6 @@ packages:
       node: '>=0.10.0'
     resolution:
       integrity: sha1-TkMekrEalzFjaqH5yNHMvP2reN8=
-  /japanese-numerals-to-number/1.0.2:
-    dev: true
-    resolution:
-      integrity: sha1-y/yxjKbpOlGwYvM6Xl0p2ddpPZQ=
   /jest-worker/24.9.0:
     dependencies:
       merge-stream: 2.0.0
@@ -3353,10 +3290,6 @@ packages:
       node: '>= 6'
     resolution:
       integrity: sha512-51PE4haMSXcHohnSMdM42anbvZANYTqMrr52tVKPqqsPJMzoP6FYYDVqahX/HrAoKEKz3uUPzSvKs9A3qR4iVw==
-  /joyo-kanji/0.2.1:
-    dev: true
-    resolution:
-      integrity: sha1-Xi6OorkDupMz8WgMZpAvyWgupZI=
   /js-tokens/4.0.0:
     dev: true
     resolution:
@@ -3463,6 +3396,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-Sqvzm8zti4rZLQB6BKJr5tqEd8k=
+  /kuromojin/1.5.1:
+    dependencies:
+      kuromoji: 0.1.1
+    dev: true
+    resolution:
+      integrity: sha512-tzt3UUqWqzwHMsahchyrcs9kgbn6OM7xP4QRCd0w5vqE0lA/cjCH0OxjLaekz5cnxGmcy8RfN7La3xOxZOvJ1w==
   /kuromojin/2.1.1:
     dependencies:
       kuromoji: 0.1.1
@@ -3879,6 +3818,12 @@ packages:
     dev: true
     resolution:
       integrity: sha1-CI7s0cIsjzGiQK3PnJXlTzPrVPs=
+  /morpheme-match-all/1.2.0:
+    dependencies:
+      morpheme-match: 1.2.1
+    dev: true
+    resolution:
+      integrity: sha512-z8F1k4U8fAMcjkGBDWwVrKZLR8VSvKtYh6+5GZ9hi5mtXrYMILwDMgiPwfNGJvk/liQEG9/oNAJUcwLpyjI9Xg==
   /morpheme-match-all/2.0.5:
     dependencies:
       morpheme-match: 2.0.4
@@ -3892,6 +3837,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-CX+iQaUjjPMLvas+hZ8zg6Csxx5j1RLaytr+5w6lpBi/oTEV2pv6sgW5Vu3+pNJHbYcaqcuofQZsKocMNUNH8g==
+  /morpheme-match/1.2.1:
+    dev: true
+    resolution:
+      integrity: sha512-SSIcFPas4Dctx5PbrfKbW5XNADlkcn38LI+fqgB9QtminQ7FXeOR3//rnAmooZ1/5zTGeFoi8H9kFBAH9y1nfQ==
   /morpheme-match/2.0.4:
     dev: true
     resolution:
@@ -5465,19 +5414,6 @@ packages:
       node: '>=10.0.0'
     resolution:
       integrity: sha512-JubKZnTQ4Z8G4IZWtaAZSiRP3I/inpy8c/Bsx2jrwGrTbKeVU5xd6qkKMHpChYeM3dWZSO0QACiGK+obhBNwYw==
-  /sorted-array/2.0.4:
-    dev: true
-    resolution:
-      integrity: sha512-58INzrX0rL6ttCfsGoFmOuQY5AjR6A5E/MmGKJ5JvWHOey6gOEOC6vO8K6C0Y2bQR6KJ8o8aFwHjp/mJ/HcYsQ==
-  /sorted-joyo-kanji/0.2.0:
-    dependencies:
-      amp-each: 1.0.1
-      code-point: 1.1.0
-      joyo-kanji: 0.2.1
-      sorted-array: 2.0.4
-    dev: true
-    resolution:
-      integrity: sha1-NK5ruvDuCl6RZbKk7rUeKrI+GFw=
   /source-list-map/2.0.1:
     dev: true
     resolution:
@@ -5954,13 +5890,52 @@ packages:
       integrity: sha512-QNGSOemLVxm1b0qnH5VpRY8uyHgfx/8M+St8wSy/d6mZh0abd+KAvhQSuO8cxmVeRKr/LRkhAB3+0QU5LKhLGw==
   /textlint-rule-helper/2.1.1:
     dependencies:
-      '@textlint/ast-node-types': 4.4.1
-      '@textlint/types': 1.5.2
+      '@textlint/ast-node-types': 4.4.2
+      '@textlint/types': 1.5.4
       structured-source: 3.0.2
       unist-util-visit: 1.4.1
     dev: true
     resolution:
       integrity: sha512-6fxgHzoJVkjl3LaC1b2Egi+5wbhG4i0pU0knJmQujVhxIJ3D3AcQQZPs457xKAi5xKz1WayYeTeJ5jrD/hnO7g==
+  /textlint-rule-ja-hiragana-daimeishi/1.0.0:
+    dependencies:
+      js-yaml: 3.14.1
+      kuromojin: 2.1.1
+      morpheme-match-all: 1.2.0
+    dev: true
+    resolution:
+      integrity: sha512-bJrKKZwMRD0o4fZ+VpHBjf3tMRfzOYFNglMtTL4IuX3O7j899bugrjJRRDwr4a1kFLu7bZOGPkBh4a2Zu/4tCw==
+  /textlint-rule-ja-hiragana-fukushi/1.3.0:
+    dependencies:
+      js-yaml: 3.14.1
+      kuromojin: 2.1.1
+      morpheme-match-all: 1.2.0
+      untildify: 4.0.0
+    dev: true
+    resolution:
+      integrity: sha512-j8+5XUDnUKbc87GUklCEOl/UrR9HPvokgKJmPN52Ask1y67rQT594pjGkiRvdmv3wESqe6PKOKK8mUFKCwiDYw==
+  /textlint-rule-ja-hiragana-hojodoushi/1.0.4:
+    dependencies:
+      js-yaml: 3.14.1
+      kuromojin: 1.5.1
+      morpheme-match-all: 1.2.0
+    dev: true
+    resolution:
+      integrity: sha1-OUlfUSpQuHPgNLVdM9+NnGi55k0=
+  /textlint-rule-ja-hiragana-keishikimeishi/1.1.0:
+    dependencies:
+      kuromojin: 2.1.1
+      morpheme-match-all: 1.2.0
+    dev: true
+    resolution:
+      integrity: sha512-rNwTzQdwGopLxesjXMYQi1MVzZbQOx7fap7dAcbajtvMCKMtucYcvOIptgegagpHctaRa303NqbHLhqMv3OIeg==
+  /textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana/2.0.2:
+    dependencies:
+      match-index: 1.0.3
+      textlint-rule-helper: 2.1.1
+    dev: true
+    resolution:
+      integrity: sha512-o30z8Lw3qnaF+yMjwZC7f0zEyMHrUAP/nI3fNAJGREudnSO+Vo1fynFuIkd4FRWW2o448dS6pG/84swvzLWUyw==
   /textlint-rule-ja-no-abusage/2.0.1:
     dependencies:
       kuromojin: 2.1.1
@@ -5987,43 +5962,49 @@ packages:
     dev: true
     resolution:
       integrity: sha512-fs5zqSY7qcCd/x7ow0Ymdq2PiQGfGI4sANIBmKbTFTPuHdmflaecFbBp2yYrVnDroj+PDq0trTHLr5iZr5xAWQ==
-  /textlint-rule-ja-no-successive-word/1.2.0:
-    dependencies:
-      '@textlint/regexp-string-matcher': 1.1.0
-      kuromojin: 2.1.1
-    dev: true
-    resolution:
-      integrity: sha512-5ki006mIOeElHtPk0WECR8xvW66I+o3lpzbRpvDSlEwjZwNeR4QHwByfBsl7KdScy945Vab1t5I0lCXXS7u3ow==
-  /textlint-rule-ja-no-weak-phrase/1.0.5:
-    dependencies:
-      kuromojin: 2.1.1
-      morpheme-match: 2.0.4
-      morpheme-match-all: 2.0.5
-    dev: true
-    resolution:
-      integrity: sha512-cEanJSwVPRCSIg1gd2lGEMqp2WWN2QPR0JiDO8zOkikNsAuFBJm8jwo7hyig4URCgcEuERCnaHzxpAcebarGVQ==
-  /textlint-rule-ja-unnatural-alphabet/2.0.1:
-    dependencies:
-      '@textlint/regexp-string-matcher': 1.1.0
-      match-index: 1.0.3
-      regx: 1.0.4
-    dev: true
-    resolution:
-      integrity: sha512-n93V8qh6OKdh8OB6yLT+9Xl8DSoZ7gWi51tWdhlLEPIWgBm18nLMgm6Ck+nVc3eENOdRcQURWUpCGotI8wTemA==
-  /textlint-rule-max-comma/1.0.4:
-    dependencies:
-      sentence-splitter: 2.3.2
-      unist-util-filter: 0.2.1
-    dev: true
-    resolution:
-      integrity: sha1-9VXJfg0wOcp9oGz9GvrQ5fWJmjc=
-  /textlint-rule-max-kanji-continuous-len/1.1.1:
+  /textlint-rule-ja-no-space-around-parentheses/2.0.2:
     dependencies:
       match-index: 1.0.3
       textlint-rule-helper: 2.1.1
     dev: true
     resolution:
-      integrity: sha1-y8xESIwG02xlCZ4S95d+OhXDt38=
+      integrity: sha512-GYjwujWlY6AEuTRrusCv3MPnim8DcPXF4J+l3YL8P17DuxFI0/yhR3t1L2UNErvxf0Uv4ymg4gHHN4RAkbRdyw==
+  /textlint-rule-ja-no-space-between-full-width/2.0.2:
+    dependencies:
+      match-index: 1.0.3
+      regx: 1.0.4
+      textlint-rule-helper: 2.1.1
+    dev: true
+    resolution:
+      integrity: sha512-uTfjDY5W+GtmeuAKasDVAsOZHX5cZ7Id8QOKRtODE9VtuGY7ACDeJn20NR8YbFVh4sz55LaZasW95XR+RDo++g==
+  /textlint-rule-ja-space-after-exclamation/2.0.2:
+    dependencies:
+      match-index: 1.0.3
+      textlint-rule-helper: 2.1.1
+    dev: true
+    resolution:
+      integrity: sha512-AcnOKT4xCYZiR7iueUIkTlO+0ZAV246cbD/keaVXUQI3RwK0Bdgc6yORxqICHi2WxHJICmKsJaggVQTO7pWQiQ==
+  /textlint-rule-ja-space-after-question/2.0.2:
+    dependencies:
+      match-index: 1.0.3
+      textlint-rule-helper: 2.1.1
+    dev: true
+    resolution:
+      integrity: sha512-4VDYzxYwrb0kgHKykjzbHvr+MeMBW5YV+0/P6iJmznsNLGw8D9vBEqshG2njxdaOdxxVzwwd0uPJWyKGuDq5ZA==
+  /textlint-rule-ja-space-around-code/2.0.2:
+    dependencies:
+      match-index: 1.0.3
+      textlint-rule-helper: 2.1.1
+    dev: true
+    resolution:
+      integrity: sha512-ER4+dnu1ORusQT4bcF4Z4tB4wpDRNcL3a2lZlpug/4YG62L3WrISGUMUWpHaEXLu+QdqNq2hPo2O6L2r2PMmhA==
+  /textlint-rule-ja-space-between-half-and-full-width/2.0.2:
+    dependencies:
+      match-index: 1.0.3
+      textlint-rule-helper: 2.1.1
+    dev: true
+    resolution:
+      integrity: sha512-M/lZvaB3RyjJobvJx1leXC51AIhI+UoC3tO2U4DxBRuTiBiy2vaegFzNPpfVkLKTF+cY012CdMXK1aiy0NottQ==
   /textlint-rule-max-ten/2.0.4:
     dependencies:
       kuromojin: 2.1.1
@@ -6066,21 +6047,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-pSMSz5kUn5676ObN1RIVlOEmi4FcQkXzJKAv24pJV/PxAlEQl/bmYNcgGSZr+SONCy4QW/82+sFZguM/XSHZeA==
-  /textlint-rule-no-dropping-the-ra/1.1.3:
+  /textlint-rule-no-dropping-the-ra/2.0.0:
     dependencies:
       kuromojin: 2.1.1
       textlint-rule-helper: 2.1.1
     dev: true
     resolution:
-      integrity: sha512-JYCFIxiuX86aQZaS0McfVEJugu7EoqTtgTPIw5w/oB3htJb2SIFrLnX7Y017+IOsg7mu+bjH5Zko7H62xD2slg==
-  /textlint-rule-no-exclamation-question-mark/1.1.0:
-    dependencies:
-      '@textlint/regexp-string-matcher': 1.1.0
-      match-index: 1.0.3
-      textlint-rule-helper: 2.1.1
-    dev: true
-    resolution:
-      integrity: sha512-FcBH3uH2qp5VG7I9LKwolUCcPigONcsdam1JhAFPcu10YZNYX0r1l2y9Hzg+E4+1fXLgtGyiObWwfsfelTx8Bw==
+      integrity: sha512-2WvJ49KoEOxnVh+EU2MMeuRZtSzwZ5aIRbu51MASUvmOvEjfbeJHiLgO5Dz0YrFvAWmtOxtWbO6OO5y+SMHQRg==
   /textlint-rule-no-hankaku-kana/1.0.2:
     dependencies:
       match-index: 1.0.3
@@ -6096,6 +6069,14 @@ packages:
     dev: true
     resolution:
       integrity: sha512-brkZc+l3Y34C31zHXyMUITbdsHj0i1MeZ7IQfhR38nvXzHlKWWFqoesXndLSml6yiVIJn4glJhiiJ1yErm86Sw==
+  /textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet/1.0.1:
+    dependencies:
+      match-index: 1.0.3
+      moji: 0.5.1
+      textlint-rule-helper: 2.1.1
+    dev: true
+    resolution:
+      integrity: sha1-LRsNPO+l9SbmScjX0a8s3aapMzs=
   /textlint-rule-no-nfd/1.0.2:
     dependencies:
       match-index: 1.0.3
@@ -6104,56 +6085,42 @@ packages:
     dev: true
     resolution:
       integrity: sha512-n6tUx40/V6koDo78qqePHxSovuwSIKO0xwY3FCqVDbcfg9GxQCjde1twQJ99T3bs4LabhPOo/Pt3USaQ9XcTRQ==
-  /textlint-rule-preset-ja-technical-writing/4.0.1_textlint@11.9.0:
+  /textlint-rule-preset-smarthr/1.0.0:
     dependencies:
-      '@textlint-rule/textlint-rule-no-invalid-control-character': 1.2.0
       '@textlint-rule/textlint-rule-no-unmatched-pair': 1.0.7
-      '@textlint/module-interop': 1.2.2
+      '@textlint/module-interop': 1.2.4
+      textlint-rule-ja-hiragana-daimeishi: 1.0.0
+      textlint-rule-ja-hiragana-fukushi: 1.3.0
+      textlint-rule-ja-hiragana-hojodoushi: 1.0.4
+      textlint-rule-ja-hiragana-keishikimeishi: 1.1.0
+      textlint-rule-ja-nakaguro-or-halfwidth-space-between-katakana: 2.0.2
       textlint-rule-ja-no-abusage: 2.0.1
       textlint-rule-ja-no-mixed-period: 2.1.1
       textlint-rule-ja-no-redundant-expression: 3.0.2
-      textlint-rule-ja-no-successive-word: 1.2.0
-      textlint-rule-ja-no-weak-phrase: 1.0.5
-      textlint-rule-ja-unnatural-alphabet: 2.0.1
-      textlint-rule-max-comma: 1.0.4
-      textlint-rule-max-kanji-continuous-len: 1.1.1
+      textlint-rule-ja-no-space-around-parentheses: 2.0.2
+      textlint-rule-ja-no-space-between-full-width: 2.0.2
+      textlint-rule-ja-space-after-exclamation: 2.0.2
+      textlint-rule-ja-space-after-question: 2.0.2
+      textlint-rule-ja-space-around-code: 2.0.2
+      textlint-rule-ja-space-between-half-and-full-width: 2.0.2
       textlint-rule-max-ten: 2.0.4
       textlint-rule-no-double-negative-ja: 1.0.6
       textlint-rule-no-doubled-conjunction: 1.0.3
       textlint-rule-no-doubled-conjunctive-particle-ga: 1.1.1
       textlint-rule-no-doubled-joshi: 3.8.0
-      textlint-rule-no-dropping-the-ra: 1.1.3
-      textlint-rule-no-exclamation-question-mark: 1.1.0
+      textlint-rule-no-dropping-the-ra: 2.0.0
       textlint-rule-no-hankaku-kana: 1.0.2
       textlint-rule-no-mix-dearu-desumasu: 4.0.1
+      textlint-rule-no-mixed-zenkaku-and-hankaku-alphabet: 1.0.1
       textlint-rule-no-nfd: 1.0.2
-      textlint-rule-preset-jtf-style: 2.3.8_textlint@11.9.0
+      textlint-rule-prh: 5.3.0
       textlint-rule-sentence-length: 2.2.0
     dev: true
-    peerDependencies:
-      textlint: '*'
     resolution:
-      integrity: sha512-7673G4TROC6/cI6+RovLOUWRvn+AQyfDpjcvQWMQKRt7AGiBkRMDERiEaODvx0gfvwzQONCz0AjAFvT+2s8wlw==
-  /textlint-rule-preset-jtf-style/2.3.8_textlint@11.9.0:
-    dependencies:
-      analyze-desumasu-dearu: 2.1.5
-      japanese-numerals-to-number: 1.0.2
-      match-index: 1.0.3
-      moji: 0.5.1
-      regexp.prototype.flags: 1.3.1
-      regx: 1.0.4
-      sorted-joyo-kanji: 0.2.0
-      textlint: 11.9.0
-      textlint-rule-helper: 2.1.1
-      textlint-rule-prh: 5.3.0
-    dev: true
-    peerDependencies:
-      textlint: '>= 5.6.0'
-    resolution:
-      integrity: sha512-zysw3LxrnPyaJz25H6Qs715E91RpKSQ/4hjXg23UNAtTPii1a+RMHlbWlcpuxzF17Km0/X6iVQFFTvzMBhAxkg==
+      integrity: sha512-RRvJh2uIGs4fGrsIxQ90PbmeHY6zC7i1piWpuDU5oeez1gAWp8lO4hW1cmLHombN8E+IKeHl44GcNNvTkmw4ng==
   /textlint-rule-prh/5.3.0:
     dependencies:
-      '@babel/parser': 7.13.10
+      '@babel/parser': 7.13.13
       prh: 5.4.4
       textlint-rule-helper: 2.1.1
       untildify: 3.0.3
@@ -6495,17 +6462,6 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-uNaeirEPvpZWSgzwsPGtU2zVSTrn/8L5q/IexZmH0eH6SA73CmAA5U4GwORTxQAZs95TAXLNqeLoPPNO5gZfWg==
-  /unist-util-filter/0.2.1:
-    dependencies:
-      flatmap: 0.0.3
-      unist-util-is: 1.0.0
-    dev: true
-    resolution:
-      integrity: sha1-4veHaCiQOmqTCONiBR+GsU81tUU=
-  /unist-util-is/1.0.0:
-    dev: true
-    resolution:
-      integrity: sha1-THs8XA9qqWNkAFb+Sve1/P27jvA=
   /unist-util-is/3.0.0:
     dev: true
     resolution:
@@ -6590,6 +6546,12 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-iSk/J8efr8uPT/Z4eSUywnqyrQU7DSdMfdqK4iWEaUVVmcP5JcnpRqmVMwcwcnmI1ATFNgC5V90u09tBynNFKA==
+  /untildify/4.0.0:
+    dev: true
+    engines:
+      node: '>=8'
+    resolution:
+      integrity: sha512-KK8xQ1mkzZeg9inewmFVDNkg3l5LUhoq9kN6iWYB/CC9YMG8HA+c1Q8HwDe6dEX7kErrEVNVBO3fWsVq5iDgtw==
   /upath/1.2.0:
     dev: true
     engines:
@@ -7008,7 +6970,7 @@ packages:
       integrity: sha1-riDwYkMpPYXCVVYxifmxL1s7oaA=
 specifiers:
   textlint: ^11.9.0
-  textlint-rule-preset-ja-technical-writing: ^4.0.1
+  textlint-rule-preset-smarthr: ^1.0.0
   textlint-rule-sentence-length: ^2.2.0
   textlint-rule-spellcheck-tech-word: ^5.0.0
   zenn-cli: ^0.1.77

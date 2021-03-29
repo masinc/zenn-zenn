@@ -1,5 +1,5 @@
 rules:
   spellcheck-tech-word: true
-  preset-ja-technical-writing:
-    sentence-length:
-      max: 120
+  preset-smarthr:
+    ja-space-between-half-and-full-width:
+      space: always
