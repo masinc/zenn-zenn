@@ -176,7 +176,7 @@ fn main() {
 # `dbg!`マクロ利用で警告/エラーを表示 - Clippy との連携
 
 `dbg!`マクロは release ビルド時でも出力されます。
-また、バージョン管理システムでの `dbg!`マクロ利用をエラーにしたい等があります。
+また、バージョン管理システムでの `dbg!`マクロ利用をエラーにしたいなどがあります。
 
 これらは Rust の lint ツールである Clippy を利用することで対策できます。
 
@@ -265,7 +265,7 @@ https://rust-lang.github.io/rust-clippy/master/index.html#dbg_macro
 # rust-analyzer との連携
 
 `dbg!`マクロは LSP である rust-analyzer を利用することで便利な機能があります。
-rust-analyzer は様々なエディタで利用できますが、本記事では VSCode を利用します。
+rust-analyzer はさまざまなエディタで利用できますが、本記事では VSCode を利用します。
 
 ## `dbg!` マクロの挿入
 
