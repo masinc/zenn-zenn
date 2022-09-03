@@ -3,18 +3,18 @@ lockfileVersion: 5.3
 specifiers:
   textlint: ^11.9.1
   textlint-filter-rule-allowlist: ^4.0.0
-  textlint-rule-preset-smarthr: ^1.14.2
+  textlint-rule-preset-smarthr: ^1.15.0
   textlint-rule-sentence-length: ^2.2.0
   textlint-rule-spellcheck-tech-word: ^5.0.0
-  zenn-cli: ^0.1.115
+  zenn-cli: ^0.1.121
 
 devDependencies:
   textlint: 11.9.1
   textlint-filter-rule-allowlist: 4.0.0_textlint@11.9.1
-  textlint-rule-preset-smarthr: 1.14.2
+  textlint-rule-preset-smarthr: 1.15.0
   textlint-rule-sentence-length: 2.2.0
   textlint-rule-spellcheck-tech-word: 5.0.0_textlint@11.9.1
-  zenn-cli: 0.1.115
+  zenn-cli: 0.1.121
 
 packages:
 
@@ -28,8 +28,8 @@ packages:
       '@azu/format-text': 1.0.1
     dev: true
 
-  /@babel/parser/7.18.9:
-    resolution: {integrity: sha512-9uJveS9eY9DJ0t64YbIBZICtJy8a5QrDEVdiLCG97fVLpDTpGX7t8mMSb6OWw6Lrnjqj4O8zwjELX3dhoMgiBg==}
+  /@babel/parser/7.18.13:
+    resolution: {integrity: sha512-dgXcIfMuQ0kgzLB2b9tRZs7TTFFaGM2AbtA4fJgUUYukzGH4jwsS7hzQHEGs67jdehpm22vkgKwvbU+aEflgwg==}
     engines: {node: '>=6.0.0'}
     hasBin: true
     dev: true
@@ -267,7 +267,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.1
+      es-abstract: 1.20.2
       es-shim-unscopables: 1.0.0
     dev: true
 
@@ -478,8 +478,8 @@ packages:
       is-arrayish: 0.2.1
     dev: true
 
-  /es-abstract/1.20.1:
-    resolution: {integrity: sha512-WEm2oBhfoI2sImeM4OF2zE2V3BYdSF+KnSi9Sidz51fQHd7+JuF8Xgcj9/0o+OWeIeIS/MiuNnlruQrJf16GQA==}
+  /es-abstract/1.20.2:
+    resolution: {integrity: sha512-XxXQuVNrySBNlEkTYJoDNFe5+s2yIOpzq80sUHEdPdQr0S5nTLz4ZPPPswNIpKseDDUS5yghX1gfLIHQZ1iNuQ==}
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
@@ -500,7 +500,7 @@ packages:
       is-weakref: 1.0.2
       object-inspect: 1.12.2
       object-keys: 1.1.1
-      object.assign: 4.1.2
+      object.assign: 4.1.4
       regexp.prototype.flags: 1.4.3
       string.prototype.trimend: 1.0.5
       string.prototype.trimstart: 1.0.5
@@ -613,7 +613,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.1
+      es-abstract: 1.20.2
       functions-have-names: 1.2.3
     dev: true
 
@@ -798,8 +798,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /is-core-module/2.9.0:
-    resolution: {integrity: sha512-+5FPy5PnwmO3lvfMb0AsoPaBG+5KHUI0wYFXOtYPnVVVspTFUuMZNfNaNVRt3FZadstu2c8x23vykRW/NBoU6A==}
+  /is-core-module/2.10.0:
+    resolution: {integrity: sha512-Erxj2n/LDAZ7H8WNJXd9tw38GYM3dv8rk8Zcs+jJuxYTW7sozH+SS8NtrSjVL1/vpLvWi1hxy96IzjJ3EHTJJg==}
     dependencies:
       has: 1.0.3
     dev: true
@@ -1198,8 +1198,8 @@ packages:
     engines: {node: '>= 0.4'}
     dev: true
 
-  /object.assign/4.1.2:
-    resolution: {integrity: sha512-ixT2L5THXsApyiUPYKmW+2EHpXXe5Ii3M+f4e+aJFAHao5amFRW6J0OO6c/LU8Be47utCx2GL89hxGB6XSmKuQ==}
+  /object.assign/4.1.4:
+    resolution: {integrity: sha512-1mxKf0e58bvyjSCtKYY4sRe9itRk3PJpquJOjeIkz885CczcI4IvJJDLPS72oowuSh+pBxUFROpX+TU++hxhZQ==}
     engines: {node: '>= 0.4'}
     dependencies:
       call-bind: 1.0.2
@@ -1496,7 +1496,7 @@ packages:
     resolution: {integrity: sha512-nBpuuYuY5jFsli/JIs1oldw6fOQCBioohqWZg/2hiaOybXOft4lonv85uDOKXdf8rhyK159cxU5cDcK/NKk8zw==}
     hasBin: true
     dependencies:
-      is-core-module: 2.9.0
+      is-core-module: 2.10.0
       path-parse: 1.0.7
       supports-preserve-symlinks-flag: 1.0.0
     dev: true
@@ -1563,7 +1563,7 @@ packages:
     resolution: {integrity: sha512-cOYcUWwhCuHCXi49RhFRCyJEK3iPj1Ziz9DpViV3tbZOwXD49QzIN3MpOLJNxh2qwq2lJJZaKMVw9qNi4jTC0w==}
     dependencies:
       spdx-expression-parse: 3.0.1
-      spdx-license-ids: 3.0.11
+      spdx-license-ids: 3.0.12
     dev: true
 
   /spdx-exceptions/2.3.0:
@@ -1574,11 +1574,11 @@ packages:
     resolution: {integrity: sha512-cbqHunsQWnJNE6KhVSMsMeH5H/L9EpymbzqTQ3uLwNCLZ1Q481oWaofqH7nO6V07xlXwY6PhQdQ2IedWx/ZK4Q==}
     dependencies:
       spdx-exceptions: 2.3.0
-      spdx-license-ids: 3.0.11
+      spdx-license-ids: 3.0.12
     dev: true
 
-  /spdx-license-ids/3.0.11:
-    resolution: {integrity: sha512-Ctl2BrFiM0X3MANYgj3CkygxhRmr9mi6xhejbdO960nF6EDJApTYpn0BQnDKlnNBULKiCN1n3w9EBkHK8ZWg+g==}
+  /spdx-license-ids/3.0.12:
+    resolution: {integrity: sha512-rr+VVSXtRhO4OHbXUiAF7xW3Bo9DuuF6C5jH+q/x15j2jniycgKbxU09Hr0WqlSLUs4i4ltHGXqTe7VHclYWyA==}
     dev: true
 
   /spellcheck-technical-word/2.0.0:
@@ -1618,7 +1618,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.1
+      es-abstract: 1.20.2
     dev: true
 
   /string.prototype.trimstart/1.0.5:
@@ -1626,7 +1626,7 @@ packages:
     dependencies:
       call-bind: 1.0.2
       define-properties: 1.1.4
-      es-abstract: 1.20.1
+      es-abstract: 1.20.2
     dev: true
 
   /string_decoder/1.1.1:
@@ -1900,8 +1900,8 @@ packages:
       kuromojin: 3.0.0
     dev: true
 
-  /textlint-rule-no-doubled-conjunction/2.0.2:
-    resolution: {integrity: sha512-w9J2Tp8hpvlfQj9UXEgXMuUZ8lqWFcLl6y1FQDD8SadXOsKyJl4+U9h/YH3ruTi2/F+vCksY8vAytnck/ApSWg==}
+  /textlint-rule-no-doubled-conjunction/2.0.4:
+    resolution: {integrity: sha512-GUpZgJoEYk1EsqoE+0bcdln8ZbH6UDK9TWld3E2II+lGMw/0ALkoTNXhAsNK1ST/M7zYEX6a5qOCN68t2grDaA==}
     dependencies:
       kuromojin: 3.0.0
       sentence-splitter: 3.2.2
@@ -1986,8 +1986,8 @@ packages:
       - '@textlint/types'
     dev: true
 
-  /textlint-rule-preset-smarthr/1.14.2:
-    resolution: {integrity: sha512-0k/nH3FAlPLDe6j0ODnL2/ne2ayJgOpKwgYYMCfRWAjbVZFfNVcIh9rlF7ChyuRZ98kxSYO4kykYL4kdsLAUZQ==}
+  /textlint-rule-preset-smarthr/1.15.0:
+    resolution: {integrity: sha512-DZPuEe6FNb2zUoyVD7WrZEsGnc6/x6jzEWoqqdroAl6tWHJmR9SR6KMHLjH6V939gUEVRTt53qVFdRvprRiKBw==}
     dependencies:
       '@textlint-rule/textlint-rule-no-unmatched-pair': 1.0.8
       '@textlint/module-interop': 12.2.1
@@ -2007,7 +2007,7 @@ packages:
       textlint-rule-ja-space-between-half-and-full-width: 2.2.0
       textlint-rule-max-ten: 4.0.3
       textlint-rule-no-double-negative-ja: 2.0.1
-      textlint-rule-no-doubled-conjunction: 2.0.2
+      textlint-rule-no-doubled-conjunction: 2.0.4
       textlint-rule-no-doubled-conjunctive-particle-ga: 2.0.4
       textlint-rule-no-doubled-joshi: 4.0.1
       textlint-rule-no-dropping-the-ra: 3.0.0
@@ -2025,7 +2025,7 @@ packages:
   /textlint-rule-prh/5.3.0:
     resolution: {integrity: sha512-gdod+lL1SWUDyXs1ICEwvQawaSshT3mvPGufBIjF2R5WFPdKQDMsiuzsjkLm+aF+9d97dA6pFsiyC8gSW7mSgg==}
     dependencies:
-      '@babel/parser': 7.18.9
+      '@babel/parser': 7.18.13
       prh: 5.4.4
       textlint-rule-helper: 2.2.1
       untildify: 3.0.3
@@ -2372,8 +2372,8 @@ packages:
     engines: {node: '>=0.4'}
     dev: true
 
-  /zenn-cli/0.1.115:
-    resolution: {integrity: sha512-yy4CktogzgjEdBZzsVw1Lml8z5LMFfqZqe/odDaCdtQvKDgDHwxjSVhJNco15kChbzA2ySBD9Fjy3y8aObHHQg==}
+  /zenn-cli/0.1.121:
+    resolution: {integrity: sha512-u17cJ6dOlqMB3lNzdK6br4QHBKFa5eq7LM9q0/g2nhJqiwzmjONzwQAo43CpBoL8RQ4abm97vI2Q3clwgema/w==}
     engines: {node: '>=14.0.0'}
     hasBin: true
     dev: true

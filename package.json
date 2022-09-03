@@ -16,9 +16,9 @@
   "devDependencies": {
     "textlint": "^11.9.1",
     "textlint-filter-rule-allowlist": "^4.0.0",
-    "textlint-rule-preset-smarthr": "^1.14.2",
+    "textlint-rule-preset-smarthr": "^1.15.0",
     "textlint-rule-sentence-length": "^2.2.0",
     "textlint-rule-spellcheck-tech-word": "^5.0.0",
-    "zenn-cli": "^0.1.115"
+    "zenn-cli": "^0.1.121"
   }
 }
