@@ -1,12 +1,83 @@
 rules:
+  # Google Developer Documentation Style Guide for textlint.
+  # "@textlint-rule/preset-google": true
+  textlint-rule-preset-ja-technical-writing:
+    sentence-length:
+      max: 120
+    # よくある誤用をチェックするtextlintルール
+    ja-no-abusage: true
+    # 文末の句点(。)の統一 OR 抜けをチェックするtextlintルール
+    ja-no-mixed-period: true
+    # 冗長な表現を禁止するtextlintルールです。
+    ja-no-redundant-expression: true
+    # 一文に利用できる、の数を制限するtextlintルール
+    max-ten:
+      # 1文に利用できる最大の、の数
+      # max: 3の場合は4つ以上の読点でエラーとなる
+      max: 3
+    # 二重否定 を検出するtextlintルールです。
+    no-double-negative-ja: true
+    # 同じ接続詞が連続して出現していないかどうかをチェックするためのtextlintルールです。
+    no-doubled-conjunction: true
+    # 逆接の接続助詞「が」は、特に否定の意味ではなくても安易に使われてしまいがちです。これが同一文中に複数回出現していないかどうかをチェックするためのtextlintルールです。
+    no-doubled-conjunctive-particle-ga: true
+    # 1つの文中に同じ助詞が連続して出てくるのをチェックするtextlintルールです。
+    no-doubled-joshi:
+      min_interval: 1
+    # ら抜き言葉を検出するtextlintルールです。
+    no-dropping-the-ra: true
+    # 半角カナの利用を禁止するtextlintルール。
+    no-hankaku-kana: true
+    # # 敬体(ですます調)と常体(である調)の混在をチェックするtextlintルール。
+    no-mix-dearu-desumasu: true
+    # Mac OS XでPDFやFinderからのコピペで問題となる濁点を見つけて、修正するtextlintルールです。
+    no-nfd: true
+  # 漢字よりもひらがなで表記したほうが読みやすい代名詞・形式名詞を指摘します。検出には形態素解析を使っています。自動修正にも対応しています。
+  ja-hiragana-daimeishi: true
+  # 漢字よりもひらがなで表記したほうが読みやすい副詞を指摘します。検出には形態素解析を使っています。自動修正にも対応しています。
+  ja-hiragana-fukushi: true
+  # 漢字よりもひらがなで表記したほうが読みやすい補助動詞を指摘します。検出には形態素解析を使っています。自動修正にも対応しています。
+  ja-hiragana-hojodoushi: true
+  # 漢字よりもひらがなで表記したほうが読みやすい形式名詞を指摘します。 検出には形態素解析を使っています。 自動修正にも対応しています。
+  ja-keishikimeishi:
+    #「方」を「ほう」と訂正するか否か
+    detection_hou_kata: false
+    #「上」を「うえ」と訂正するか否か
+    detection_ue: false
+  # 全角と半角アルファベットの混在をチェックするtextlintルール
+  no-mixed-zenkaku-and-hankaku-alphabet: true
+  # い抜き言葉を検出するtextlintルールです。
+  "@textlint-ja/textlint-rule-no-dropping-i": true
+  # 日本語周りにおけるスペースの有無を決定するtextlintルールプリセットを提供します。
+  preset-ja-spacing:
+    # カタカナ語間の区切り文字についてのtextlintルール。 カタカナ語間は中黒または半角スペースを用いてカタカナ語を区切ります。
+    ja-nakaguro-or-halfwidth-space-between-katakana: true
+    # かっこの外側、内側ともにスペースを入れないようにするルール
+    ja-no-space-around-parentheses: true
+    # 全角文字同士の間のスペースについてのtextlintルール
+    ja-no-space-between-full-width: true
+    # 半角文字と全角文字の間にスペースを入れるかどうかのルール。 デフォルトはスペースを入れない。
+    ja-space-between-half-and-full-width: false
+    # 文末に感嘆符を使用し、後に別の文が続く場合は、直後に全角スペースを挿入します。 文中に感嘆符を使用する場合はスペースを挿入しません
+    ja-space-after-exclamation: false
+    # 文末に疑問符を使用し、後に別の文が続く場合は、直後に全角スペースを挿入します。 文中に疑問符を使用する場合はスペースを挿入しません。
+    ja-space-after-question: false
+    # インラインコードの周りにスペースを入れるかを決めるルール
+    ja-space-around-code: false
   spellcheck-tech-word: true
-  preset-smarthr:
-    ja-space-between-half-and-full-width:
-      space: always
-
+  textlint-rule-no-dropping-the-ra: true
 filters:
-  allowlist:
-    allow:
-      # https://zenn.dev/zenn/articles/markdown-guide#%E3%82%A2%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA%E3%83%B3%EF%BC%88%E3%83%88%E3%82%B0%E3%83%AB%EF%BC%89
-      - /:+details\s+.+/
-      - /:::message\s+.+/
+  comments: true
+#   spellcheck-tech-word: true
+#   preset-smarthr:
+#     ja-space-between-half-and-full-width:
+#       space: always
+#   prh:
+#     rulePaths:
+#       - a.yaml
+# filters:
+#   allowlist:
+#     allow:
+#       # https://zenn.dev/zenn/articles/markdown-guide#%E3%82%A2%E3%82%B3%E3%83%BC%E3%83%87%E3%82%A3%E3%82%AA%E3%83%B3%EF%BC%88%E3%83%88%E3%82%B0%E3%83%AB%EF%BC%89
+#       - /:+details\s+.+/
+#       - /:::message\s+.+/
