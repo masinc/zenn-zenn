@@ -1,0 +1,8 @@
+version: "3"
+tasks:
+  new:
+    cmds:
+      - pnpm exec zenn new:article
+  serve:
+    cmds:
+      - pnpm exec zenn preview
