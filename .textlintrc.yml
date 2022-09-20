@@ -57,7 +57,8 @@ rules:
     # 全角文字同士の間のスペースについてのtextlintルール
     ja-no-space-between-full-width: true
     # 半角文字と全角文字の間にスペースを入れるかどうかのルール。 デフォルトはスペースを入れない。
-    ja-space-between-half-and-full-width: false
+    ja-space-between-half-and-full-width:
+      space: always
     # 文末に感嘆符を使用し、後に別の文が続く場合は、直後に全角スペースを挿入します。 文中に感嘆符を使用する場合はスペースを挿入しません
     ja-space-after-exclamation: false
     # 文末に疑問符を使用し、後に別の文が続く場合は、直後に全角スペースを挿入します。 文中に疑問符を使用する場合はスペースを挿入しません。
