@@ -10,6 +10,9 @@ rules:
     ja-no-mixed-period: true
     # 冗長な表現を禁止するtextlintルールです。
     ja-no-redundant-expression: true
+    # 連続できる漢字の文字数
+    max-kanji-continuous-len:
+      max: 7
     # 一文に利用できる、の数を制限するtextlintルール
     max-ten:
       # 1文に利用できる最大の、の数
