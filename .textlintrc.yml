@@ -7,7 +7,8 @@ rules:
     # よくある誤用をチェックするtextlintルール
     ja-no-abusage: true
     # 文末の句点(。)の統一 OR 抜けをチェックするtextlintルール
-    ja-no-mixed-period: true
+    ja-no-mixed-period:
+      allowPeriodMarks: [":", "."]
     # 冗長な表現を禁止するtextlintルールです。
     ja-no-redundant-expression: true
     # 連続できる漢字の文字数
