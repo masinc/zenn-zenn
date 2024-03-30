@@ -1,8 +1,10 @@
 {
     "cSpell.words": [
         "EPUB",
+        "IMDS",
         "kwargs",
         "Multipass",
-        "Skopeo"
+        "Skopeo",
+        "textlint"
     ]
 }
