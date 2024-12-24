@@ -69,7 +69,6 @@ rules:
     ja-space-after-question: false
     # インラインコードの周りにスペースを入れるかを決めるルール
     ja-space-around-code: false
-  spellcheck-tech-word: true
   textlint-rule-no-dropping-the-ra: true
 filters:
   comments: true
